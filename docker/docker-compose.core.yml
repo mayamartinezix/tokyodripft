@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: resale
+      POSTGRES_USER: resale
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ../db/schema.sql:/docker-entrypoint-initdb.d/schema.sql:ro
+    ports:
+      - "5432:5432"
+
+  ntfy:
+    image: binwiederhier/ntfy
+    restart: unless-stopped
+    command: serve
+    ports:
+      - "80:80"
+    volumes:
+      - ntfy-cache:/var/cache/ntfy
+
+volumes:
+  pgdata:
+  ntfy-cache:

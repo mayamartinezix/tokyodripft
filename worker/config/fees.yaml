@@ -1,0 +1,37 @@
+# Fee schedules used to net out real margin when suggesting a sell price.
+# These are current-as-of-2026 figures from public seller guides, NOT pulled
+# live from either platform. Both change fee structures periodically —
+# check your own seller dashboard before trusting a suggested price at scale.
+
+ebay:
+  final_value_fee_pct: 0.136          # most fashion/standard categories
+  final_value_fee_pct_over_threshold: 0.0235
+  threshold_amount: 7500              # fee drops above this sale amount
+  per_order_fee_low: 0.30             # orders <= per_order_fee_low_max_amount
+  per_order_fee_low_max_amount: 10
+  per_order_fee_high: 0.40            # orders above that
+  applies_to: "item price + shipping charged to buyer"
+
+vestiaire:
+  # Tiered commission — drops as sale price rises. max_amount is the upper
+  # bound of each tier in USD; last tier (max_amount: null) is uncapped.
+  tiers:
+    - max_amount: 50
+      pct: 0.25
+    - max_amount: 100
+      pct: 0.20
+    - max_amount: 500
+      pct: 0.20
+    - max_amount: 1000
+      pct: 0.18
+    - max_amount: 2500
+      pct: 0.15
+    - max_amount: 5000
+      pct: 0.13
+    - max_amount: null
+      pct: 0.12
+  payment_processing_pct: 0.029
+  payment_processing_flat: 0.30
+
+pricing:
+  target_min_margin_pct: 0.20   # default; overridden by TARGET_MIN_MARGIN_PCT env var

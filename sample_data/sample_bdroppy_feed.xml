@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <sku>BD-10234</sku>
+        <name>Diesel Shoulder Bag Black Leather</name>
+        <brand>Diesel</brand>
+        <model>Shoulder Bag Black Leather</model>
+        <wholesale_price>85.00</wholesale_price>
+        <currency>EUR</currency>
+        <product_url>https://www.bdroppy.com/sample/bd-10234</product_url>
+    </product>
+    <product>
+        <sku>BD-10891</sku>
+        <name>Tommy Hilfiger Crossbody Bag Navy Canvas</name>
+        <brand>Tommy Hilfiger</brand>
+        <model>Crossbody Bag Navy Canvas</model>
+        <wholesale_price>42.50</wholesale_price>
+        <currency>EUR</currency>
+        <product_url>https://www.bdroppy.com/sample/bd-10891</product_url>
+    </product>
+</products>
